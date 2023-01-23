@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Assignment Application</string>
+    <string name="assignment_application">Assignment Application</string>
+    <string name="imei_number_of_this_device">IMEI number of this device :</string>
+</resources>

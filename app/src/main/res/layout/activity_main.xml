@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    tools:ignore="MissingClass">
+    
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+    </VideoView>
+
+<!--layout for app bar-->
+    <LinearLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:background="#807286D3"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:paddingTop="15dp"
+            android:textSize="25sp"
+            android:text="@string/assignment_application"
+            android:layout_gravity="center" />
+    </LinearLayout>
+<!--layout for everthing else-->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+       <RelativeLayout
+           android:id="@+id/layoutInformation"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="10dp"
+           android:background="@color/transparenthWhite"
+           tools:ignore="UselessParent">
+
+           <TextView
+               android:id="@+id/imeiMessage"
+               android:layout_width="match_parent"
+               android:gravity="center_vertical"
+               android:layout_height="60dp"
+               android:text="@string/imei_number_of_this_device"
+               android:textSize="25sp"
+               android:textColor="@color/white">
+           </TextView>
+
+           <TextView
+               android:id="@+id/eDTtvIMEI"
+               android:layout_width="wrap_content"
+               android:layout_height="60dp"
+
+               android:gravity="center_vertical"
+               android:textSize="25sp"
+               android:layout_below="@+id/imeiMessage"
+               android:textStyle="bold"
+               android:padding="2dp"
+               android:textColor="@color/white">
+           </TextView>
+
+           <LinearLayout
+               android:id="@+id/layoutInternet"
+               android:layout_below="@+id/eDTtvIMEI"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:paddingTop="20dp"
+               android:padding="3dp">
+
+           <TextView
+               android:id="@+id/tvinternetConnection"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:text="Internet Connection"
+               android:gravity="center_vertical"
+               android:textColor="@color/white"
+               android:textSize="25sp">
+           </TextView>
+
+           <TextView
+               android:id="@+id/tvconnectionStatus"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:textSize="25sp"
+               android:textStyle="bold"
+               android:gravity="center_vertical"
+               android:paddingStart="20dp"
+               android:textColor="@color/white"
+               tools:ignore="RtlSymmetry">
+           </TextView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/layoutBattery"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:layout_below="@id/layoutInternet"
+               android:orientation="horizontal"
+               android:paddingTop="20dp"
+               android:padding="5dp">
+
+               <TextView
+                   android:id="@+id/tvBatteryStatus"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Battery Status"
+                   android:textColor="@color/white"
+                   android:textSize="25sp">
+               </TextView>
+
+               <TextView
+                   android:id="@+id/tvbatteryPercentage"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textStyle="bold"
+                   android:textSize="25sp"
+                   android:paddingStart="15dp"
+                   tools:ignore="RtlSymmetry">
+               </TextView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/layoutLocation"
+               android:layout_width="match_parent"
+               android:layout_height="80dp"
+               android:layout_below="@id/layoutBattery"
+               android:orientation="horizontal"
+               android:paddingTop="10dp"
+               android:padding="5dp">
+
+               <TextView
+                   android:id="@+id/tvLocation"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Location :"
+                   android:textColor="@color/white"
+                   android:textSize="25sp">
+               </TextView>
+
+               <TextView
+                   android:id="@+id/tvLocationCity"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textSize="25sp">
+               </TextView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/layoutTimestamp"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:layout_below="@id/layoutLocation"
+               android:orientation="horizontal"
+               android:paddingTop="20dp"
+               android:padding="5dp">
+
+               <TextView
+                   android:id="@+id/tvTimestamp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Timestamp :"
+                   android:textColor="@color/white"
+                   android:textSize="25sp">
+               </TextView>
+
+               <TextView
+                   android:id="@+id/tvCurrentTimestamp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:paddingStart="15dp"
+                   tools:ignore="RtlSymmetry">
+               </TextView>
+
+           </LinearLayout>
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="60dp"
+               android:layout_centerInParent="true"
+               android:text="Click Meeee!"
+               android:layout_below="@+id/layoutTimestamp"
+               android:background="@color/transparenthWhite">
+           </Button>
+
+       </RelativeLayout>
+
+   </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
